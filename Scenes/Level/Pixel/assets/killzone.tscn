@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://cep8eifl3tebg"]
 
-[ext_resource type="Script" uid="uid://434rdf1qw6ft" path="res://Scenes/Level/BetterPixel/script/killzone.gd" id="1_adau6"]
+[ext_resource type="Script" uid="uid://dld5jc7xwk8uc" path="res://Scenes/Level/Pixel/assets/killzone.gd" id="1_ys8a4"]
 
 [node name="Killzone" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_adau6")
+script = ExtResource("1_ys8a4")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
