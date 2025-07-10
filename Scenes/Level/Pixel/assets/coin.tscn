@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://cln6qswkhx7en"]
 
 [ext_resource type="Texture2D" uid="uid://b0gaslnwyv1aa" path="res://Sprites/coin.png" id="1_6jxkx"]
-[ext_resource type="Script" uid="uid://nw28n5s4dc7m" path="res://Scenes/Level/BetterPixel/script/coin.gd" id="1_iu01f"]
+[ext_resource type="Script" uid="uid://bh0ytmuqdcbdd" path="res://Script/coin.gd" id="1_etmh8"]
 [ext_resource type="AudioStream" uid="uid://bt82wyrq7t6c7" path="res://sounds/coin.wav" id="3_etmh8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6p5v"]
@@ -101,7 +101,7 @@ radius = 5.0
 
 [node name="coin" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_iu01f")
+script = ExtResource("1_etmh8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_37o4v")
