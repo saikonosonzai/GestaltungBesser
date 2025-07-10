@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cjepedatnroo2"]
+[gd_scene load_steps=38 format=3 uid="uid://cjepedatnroo2"]
 
 [ext_resource type="Texture2D" uid="uid://cydx0va0laoeb" path="res://Sprites/world_tileset.png" id="1_nd6a8"]
 [ext_resource type="PackedScene" uid="uid://cep8eifl3tebg" path="res://Scenes/Level/Pixel/assets/killzone.tscn" id="2_q4olp"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://crumwpg28e1hh" path="res://Scenes/Level/Pixel/assets/platform_savanna.tscn" id="7_f2mmq"]
 [ext_resource type="PackedScene" uid="uid://bvj7pk68bmlkd" path="res://Scenes/actors/slime_g.tscn" id="8_lseli"]
 [ext_resource type="AudioStream" uid="uid://crheiajjhdiia" path="res://sounds/DigicoreFinal.wav" id="9_j8e2r"]
-[ext_resource type="Script" path="res://Scenes/Level/Pixel/goal.gd" id="10_q4olp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dj08r"]
 resource_name = "with collision"
@@ -627,9 +626,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcono"]
 size = Vector2(223, 592)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lojta"]
-size = Vector2(19, 53)
-
 [node name="Level 03" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -774,13 +770,16 @@ position = Vector2(808, -112)
 position = Vector2(1416, -176)
 
 [node name="SlimeG4" parent="." instance=ExtResource("8_lseli")]
-position = Vector2(1268, 32)
+position = Vector2(1608, -128)
 
 [node name="SlimeG5" parent="." instance=ExtResource("8_lseli")]
 position = Vector2(1240, -688)
 
 [node name="SlimeG6" parent="." instance=ExtResource("8_lseli")]
 position = Vector2(2009, -640)
+
+[node name="SlimeG7" parent="." instance=ExtResource("8_lseli")]
+position = Vector2(2200, -640)
 
 [node name="Mountaintop" type="Area2D" parent="."]
 collision_layer = 0
@@ -799,18 +798,5 @@ stream = ExtResource("9_j8e2r")
 volume_db = -27.819
 autoplay = true
 
-[node name="Goal" type="Node" parent="."]
-
-[node name="Goal" type="Area2D" parent="Goal"]
-position = Vector2(2598, -491)
-collision_mask = 2
-script = ExtResource("10_q4olp")
-loadScene = "res://Scenes/Level/BetterPixel/level_04.tscn"
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Goal"]
-shape = SubResource("RectangleShape2D_lojta")
-
 [connection signal="body_entered" from="Mountaintop" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Mountaintop" to="Player" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Goal/Goal" to="Goal/Goal" method="_on_body_entered"]
