@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bi7x150wlek2k"]
+[gd_scene load_steps=14 format=3 uid="uid://bi7x150wlek2k"]
 
 [ext_resource type="Texture2D" uid="uid://duttgfhlvjdov" path="res://Scenes/Level/1Bit/Tilemap/monochrome_tilemap_packed.png" id="1_3gxuu"]
 [ext_resource type="PackedScene" uid="uid://cep8eifl3tebg" path="res://Scenes/Level/Pixel/assets/killzone.tscn" id="3_iyd31"]
 [ext_resource type="Texture2D" uid="uid://vb24s3jrydsk" path="res://Scenes/Level/1Bit/Tilemap/monochrome_tilemap_transparent_packed.png" id="4_vnvts"]
 [ext_resource type="PackedScene" uid="uid://b38xvldhcrwyw" path="res://Scenes/actors/player.tscn" id="5_3jycm"]
+[ext_resource type="Script" path="res://Scenes/actors/goal.gd" id="5_ogyhx"]
 [ext_resource type="PackedScene" uid="uid://whcft00mxnpk" path="res://Scenes/actors/goal.tscn" id="5_sv76i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqacl"]
@@ -1603,6 +1604,7 @@ shape = SubResource("CircleShape2D_3jycm")
 
 [node name="Goal" parent="." instance=ExtResource("5_sv76i")]
 position = Vector2(3149, -273)
+script = ExtResource("5_ogyhx")
 loadScene = "res://Scenes/Level/Gamboy/Level_02.tscn"
 metadata/_edit_group_ = true
 

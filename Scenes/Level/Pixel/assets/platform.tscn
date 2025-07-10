@@ -6,6 +6,7 @@
 size = Vector2(32, 8)
 
 [node name="Platform" type="AnimatableBody2D"]
+process_mode = 1
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -14,5 +15,6 @@ region_enabled = true
 region_rect = Rect2(17, 0, 30, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+process_mode = 1
 shape = SubResource("RectangleShape2D_l1j6t")
 one_way_collision = true
