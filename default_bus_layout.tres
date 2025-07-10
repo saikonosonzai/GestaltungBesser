@@ -1,0 +1,5 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://dlce43jx0bf8m"]
+
+[resource]
+bus/0/volume_db = -18.9844
+bus/0/send = &"New Bus"
