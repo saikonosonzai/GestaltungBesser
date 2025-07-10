@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://crumwpg28e1hh" path="res://Scenes/Level/Pixel/assets/platform_savanna.tscn" id="7_f2mmq"]
 [ext_resource type="PackedScene" uid="uid://bvj7pk68bmlkd" path="res://Scenes/actors/slime_g.tscn" id="8_lseli"]
 [ext_resource type="AudioStream" uid="uid://crheiajjhdiia" path="res://sounds/DigicoreFinal.wav" id="9_j8e2r"]
-[ext_resource type="Script" uid="uid://dcqlqsr5n847f" path="res://Script/goal.gd" id="10_q4olp"]
+[ext_resource type="Script" path="res://Scenes/Level/Pixel/goal.gd" id="10_q4olp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dj08r"]
 resource_name = "with collision"
@@ -650,14 +650,12 @@ layer_4/tile_data = PackedInt32Array(262208, 262144, 9, 262209, 262144, 9, 26221
 
 [node name="Killzone" parent="." instance=ExtResource("2_q4olp")]
 position = Vector2(430, 159)
-script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_4xrkf")
 
 [node name="KillzoneLava" parent="." instance=ExtResource("2_q4olp")]
 position = Vector2(430, 159)
-script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillzoneLava"]
 position = Vector2(401.5, -38)
@@ -665,7 +663,6 @@ shape = SubResource("RectangleShape2D_e1uir")
 
 [node name="KillzoneWater" parent="." instance=ExtResource("2_q4olp")]
 position = Vector2(430, 159)
-script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillzoneWater"]
 position = Vector2(994, -30)
@@ -686,27 +683,21 @@ position_smoothing_enabled = true
 
 [node name="coin" parent="Coins" instance=ExtResource("4_bbu8h")]
 position = Vector2(279, 104)
-script = null
 
 [node name="coin2" parent="Coins" instance=ExtResource("4_bbu8h")]
 position = Vector2(216, -20)
-script = null
 
 [node name="coin3" parent="Coins" instance=ExtResource("4_bbu8h")]
 position = Vector2(463, 3)
-script = null
 
 [node name="coin4" parent="Coins" instance=ExtResource("4_bbu8h")]
 position = Vector2(568, -8)
-script = null
 
 [node name="coin5" parent="Coins" instance=ExtResource("4_bbu8h")]
 position = Vector2(760, -184)
-script = null
 
 [node name="coin6" parent="Coins" instance=ExtResource("4_bbu8h")]
 position = Vector2(-104, 136)
-script = null
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -775,7 +766,21 @@ autoplay = "move"
 
 [node name="SlimeG" parent="." instance=ExtResource("8_lseli")]
 position = Vector2(296, 32)
-script = null
+
+[node name="SlimeG2" parent="." instance=ExtResource("8_lseli")]
+position = Vector2(808, -112)
+
+[node name="SlimeG3" parent="." instance=ExtResource("8_lseli")]
+position = Vector2(1416, -176)
+
+[node name="SlimeG4" parent="." instance=ExtResource("8_lseli")]
+position = Vector2(1268, 32)
+
+[node name="SlimeG5" parent="." instance=ExtResource("8_lseli")]
+position = Vector2(1240, -688)
+
+[node name="SlimeG6" parent="." instance=ExtResource("8_lseli")]
+position = Vector2(2009, -640)
 
 [node name="Mountaintop" type="Area2D" parent="."]
 collision_layer = 0
