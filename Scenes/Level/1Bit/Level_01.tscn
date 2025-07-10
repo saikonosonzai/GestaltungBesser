@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bi7x150wlek2k"]
+[gd_scene load_steps=14 format=3 uid="uid://bi7x150wlek2k"]
 
 [ext_resource type="Texture2D" uid="uid://duttgfhlvjdov" path="res://Scenes/Level/1Bit/Tilemap/monochrome_tilemap_packed.png" id="1_3gxuu"]
 [ext_resource type="PackedScene" uid="uid://cep8eifl3tebg" path="res://Scenes/Level/Pixel/assets/killzone.tscn" id="3_iyd31"]
 [ext_resource type="Texture2D" uid="uid://vb24s3jrydsk" path="res://Scenes/Level/1Bit/Tilemap/monochrome_tilemap_transparent_packed.png" id="4_vnvts"]
 [ext_resource type="PackedScene" uid="uid://b38xvldhcrwyw" path="res://Scenes/actors/player.tscn" id="5_3jycm"]
 [ext_resource type="PackedScene" uid="uid://whcft00mxnpk" path="res://Scenes/actors/goal.tscn" id="5_sv76i"]
+[ext_resource type="AudioStream" uid="uid://crheiajjhdiia" path="res://sounds/DigicoreFinal.wav" id="6_ogyhx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqacl"]
 resource_name = "with_collision"
@@ -1618,5 +1619,10 @@ zoom = Vector2(4, 4)
 limit_left = -70
 limit_bottom = 170
 position_smoothing_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ogyhx")
+volume_db = -27.819
+autoplay = true
 
 [connection signal="body_entered" from="Goal" to="Goal" method="_on_body_entered"]
