@@ -304,6 +304,7 @@ animations = [{
 radius = 5.09902
 
 [node name="Player" type="CharacterBody2D"]
+process_mode = 3
 z_index = 5
 texture_filter = 1
 collision_layer = 2

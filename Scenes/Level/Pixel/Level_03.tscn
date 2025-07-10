@@ -701,6 +701,7 @@ position = Vector2(-104, 136)
 position = Vector2(215, 134)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform"]
+process_mode = 1
 libraries = {
 &"": SubResource("AnimationLibrary_yqnqw")
 }
@@ -710,6 +711,7 @@ autoplay = "move"
 position = Vector2(425, 21)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
+process_mode = 1
 libraries = {
 &"": SubResource("AnimationLibrary_qgqqc")
 }
@@ -719,6 +721,7 @@ autoplay = "move"
 position = Vector2(1267, 36)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/PlatformIce"]
+process_mode = 1
 libraries = {
 &"": SubResource("AnimationLibrary_h4fw4")
 }
@@ -728,6 +731,7 @@ autoplay = "Move"
 position = Vector2(1437, 59)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/PlatformIce2"]
+process_mode = 1
 libraries = {
 &"": SubResource("AnimationLibrary_e1uir")
 }
