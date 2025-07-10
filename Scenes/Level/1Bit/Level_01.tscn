@@ -1588,7 +1588,6 @@ layer_4/tile_data = PackedInt32Array(-393201, 917507, 3, -65494, 983043, 3, -131
 
 [node name="Killzone" parent="." instance=ExtResource("3_iyd31")]
 position = Vector2(594, 83)
-script = null
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
