@@ -4,6 +4,7 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var color_rect: ColorRect = $"../CanvasLayer/ColorRect"
 
 @export var bullet_time_duration := 3.0
 @export var bullet_time_cooldown := 5.0
@@ -49,7 +50,8 @@ func activate_bullet_time():
 		return
 	if GameState.is_bullet_time or not can_use_bullet_time:
 		return
-
+	
+	color_rect.start_animation("bullet")
 	can_use_bullet_time = false
 	GameState.is_bullet_time = true
 	Engine.time_scale = 0.3

@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://des811a11dohh"]
+
+[ext_resource type="Script" uid="uid://b7qkjfw85owhi" path="res://screen_shader.gd" id="2_lyh8g"]
+
+[sub_resource type="Shader" id="Shader_oqwxs"]
+code = "shader_type canvas_item;
+
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture;
+uniform vec2 center = vec2(0.5,0.5);
+uniform float size = 1.0;
+uniform float force = 1.0;
+uniform float thickness = 1.0;
+
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	float ratio = SCREEN_PIXEL_SIZE.x/ SCREEN_PIXEL_SIZE.y;
+	vec2 scaleUV = (SCREEN_UV - vec2(0.5,0.0))/ vec2(ratio, 1.0) + vec2(0.5,0.0);
+	float mask = (1.0 - smoothstep(size-0.1, size, length(scaleUV - center))) * smoothstep(size-thickness-0.1, size-thickness, length(scaleUV - center));
+	vec2 disp = normalize(scaleUV - center) * force * mask;
+	COLOR = texture(SCREEN_TEXTURE, SCREEN_UV - disp);
+
+}
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3gxuu"]
+shader = SubResource("Shader_oqwxs")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/size = 0.0
+shader_parameter/force = 0.1
+shader_parameter/thickness = 0.15
+
+[sub_resource type="Animation" id="Animation_iyd31"]
+resource_name = "Bullet_time"
+length = 5.0
+step = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 5.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3gxuu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sv76i"]
+_data = {
+&"Bullet_time": SubResource("Animation_iyd31"),
+&"RESET": SubResource("Animation_3gxuu")
+}
+
+[node name="ColorRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_3gxuu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_lyh8g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sv76i")
+}
