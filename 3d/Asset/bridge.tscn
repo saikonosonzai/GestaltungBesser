@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://do6uc8idjv6t3"]
+
+[ext_resource type="PackedScene" uid="uid://c1w26m3ow7awi" path="res://3d/Asset/data/bridge.fbx" id="1_kmco5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83adv"]
+size = Vector3(1, 0.20752, 0.500916)
+
+[node name="bridge" instance=ExtResource("1_kmco5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(2.1047, 0, 0, 0, 0.995679, -0.777658, 0, 0.0928572, 8.33859, 0, -0.227343, -2.08986)
+shape = SubResource("BoxShape3D_83adv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(2.1047, 0, 0, 0, 0.995317, 0.809525, 0, -0.0966622, 8.33556, 0, -0.227343, 2.14623)
+shape = SubResource("BoxShape3D_83adv")

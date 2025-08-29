@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1xvs6oaq6da8"]
+
+[ext_resource type="PackedScene" uid="uid://gfv5nv0lmylm" path="res://3d/Asset/data/fbx/Rock_2_E_Color1.fbx" id="1_omda7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d3ejy"]
+size = Vector3(0.492661, 0.309692, 0.838379)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_omda7"]
+size = Vector3(2.00903, 1.81799, 2.08813)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7t7is"]
+size = Vector3(1.36841, 0.508667, 1.31012)
+
+[node name="Rock_2_E_Color1" instance=ExtResource("1_omda7")]
+
+[node name="Rock_2_E_Color1" parent="." index="0"]
+transform = Transform3D(-100, -1.04216e-12, 8.74228e-06, -8.74228e-06, 1.19209e-05, -100, 0, -100, -1.19209e-05, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1.11615, -1.93322, -2.41957e-07, -1.95153e-07, 2.6611e-07, -1.64653, 1.93322, 1.11615, -2.65185e-08, 1.05469, -0.708471, -0.536741)
+shape = SubResource("BoxShape3D_d3ejy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(0.890229, 0, 0.455514, 0, 1, 0, -0.455514, 0, 0.890229, 0.019059, -0.945672, 0.0208041)
+shape = SubResource("BoxShape3D_omda7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(0.99991, 0, 0.0134386, 0, 1, 0, -0.0134386, 0, 0.99991, -0.384655, -0.245667, 1.23196)
+shape = SubResource("BoxShape3D_7t7is")

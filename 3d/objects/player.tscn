@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl2ed4gkybggf"]
+
+[ext_resource type="Script" uid="uid://dhcotxov4vsh0" path="res://3d/scripts/player.gd" id="1_ffboj"]
+[ext_resource type="PackedScene" uid="uid://cc06qlyrqsbws" path="res://3d/objects/girl.tscn" id="2_uxov2"]
+[ext_resource type="AudioStream" uid="uid://cqlf0ycru0vhd" path="res://3d/sounds/concrete-footsteps-6752.mp3" id="3_uxov2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
+radius = 0.3
+height = 1.0
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("1_ffboj")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+shape = SubResource("CapsuleShape3D_gdq8c")
+
+[node name="girl" parent="." instance=ExtResource("2_uxov2")]
+
+[node name="SoundFootsteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uxov2")
+volume_db = -5.0
+pitch_scale = 1.25
+autoplay = true
