@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dadfbhla5og3g"]
+
+[ext_resource type="PackedScene" uid="uid://d1j41cgtlgnlp" path="res://3d/Asset/data/slime/Cube.005.fbx" id="1_scwts"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_scwts"]
+size = Vector3(1, 1.15967, 1)
+
+[sub_resource type="Animation" id="Animation_2ntal"]
+resource_name = "Cube_005_Baked|Cube_016Action_003"
+length = 0.791667
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_005_Baked")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.306033, 0.999303, 11.0372, 0.0416667, 1, 0.306033, 1.04355, 11.0372, 0.0833333, 1, 0.306033, 1.16213, 11.0372, 0.125, 1, 0.306033, 1.33381, 11.0372, 0.166667, 1, 0.306033, 1.53734, 11.0372, 0.208333, 1, 0.306033, 1.75149, 11.0372, 0.25, 1, 0.306033, 1.95502, 11.0372, 0.291667, 1, 0.306033, 2.1267, 11.0372, 0.333333, 1, 0.306033, 2.24528, 11.0372, 0.375, 1, 0.306033, 2.28953, 11.0372, 0.416667, 1, 0.306033, 2.2534, 11.0372, 0.458333, 1, 0.306033, 2.15534, 11.0372, 0.5, 1, 0.306033, 2.01084, 11.0372, 0.541667, 1, 0.306033, 1.83537, 11.0372, 0.625, 1, 0.306033, 1.45346, 11.0372, 0.666667, 1, 0.306033, 1.27799, 11.0372, 0.708333, 1, 0.306033, 1.13349, 11.0372, 0.75, 1, 0.306033, 1.03543, 11.0372, 0.791667, 1, 0.306033, 0.999303, 11.0372)
+tracks/1/type = "blend_shape"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube_005_Baked:Key 1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.0416667, 1, 0.0342936, 0.0833333, 1, 0.1262, 0.125, 1, 0.259259, 0.166667, 1, 0.41701, 0.208333, 1, 0.58299, 0.25, 1, 0.740741, 0.291667, 1, 0.8738, 0.333333, 1, 0.965706, 0.375, 1, 1, 0.416667, 1, 0.972, 0.458333, 1, 0.896, 0.5, 1, 0.784, 0.541667, 1, 0.648, 0.625, 1, 0.352, 0.666667, 1, 0.216, 0.708333, 1, 0.104, 0.75, 1, 0.0279999, 0.791667, 1, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nd02m"]
+_data = {
+&"Cube_005_Baked|Cube_016Action_003": SubResource("Animation_2ntal")
+}
+
+[node name="Node3D" type="Node3D"]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+
+[node name="Cube_005" parent="AnimatableBody3D" instance=ExtResource("1_scwts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.286602, -0.69835, -11.0954)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+transform = Transform3D(1.52724, 0, 0, 0, 1, 0, 0, 0, 1.52184, 0, 0.467077, -0.0605717)
+shape = SubResource("BoxShape3D_scwts")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nd02m")
+}

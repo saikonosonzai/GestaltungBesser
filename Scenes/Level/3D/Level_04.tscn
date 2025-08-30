@@ -524,3 +524,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3391, 15.341, -106.729)
 
 [node name="cube11" parent="." instance=ExtResource("48_8o8o5")]
 transform = Transform3D(1.14334, 0, 0, 0, 1.14334, 0, 0, 0, 1.14334, -45.0171, 15.5897, -106.082)
+
+[node name="lantern" parent="." instance=ExtResource("17_nhqua")]
+transform = Transform3D(-0.94849, 0, 0.316808, 0, 1, 0, -0.316808, 0, -0.94849, -36.3375, 9.96397, -61.2645)
+
+[node name="lantern2" parent="." instance=ExtResource("17_nhqua")]
+transform = Transform3D(-0.932803, 0, -0.360387, 0, 1, 0, 0.360387, 0, -0.932803, -32.2028, 5.88164, -90.4158)
+
+[node name="lantern3" parent="." instance=ExtResource("17_nhqua")]
+transform = Transform3D(-0.617626, 0, -0.786472, 0, 1, 0, 0.786472, 0, -0.617626, -12.7603, 7.75667, -87.7172)
+
+[node name="lantern4" parent="." instance=ExtResource("17_nhqua")]
+transform = Transform3D(-0.997119, 0, -0.075849, 0, 1, 0, 0.075849, 0, -0.997119, -8.08926, 15.4744, -77.4564)
