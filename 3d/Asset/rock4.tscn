@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgn8pmspvtikd"]
+
+[ext_resource type="PackedScene" uid="uid://dhrb1guxms7v2" path="res://3d/Asset/data/fbx/Rock_1_N_Color1.fbx" id="1_1p8tm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dvjru"]
+
+[node name="Rock_1_N_Color1" instance=ExtResource("1_1p8tm")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(2.28802, 0, 0, 0, 2.28802, 0, 0, 0, 2.28802, -0.0128926, 2.29589, -0.260107)
+shape = SubResource("CylinderShape3D_dvjru")

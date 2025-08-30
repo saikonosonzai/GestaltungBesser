@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://c7ihpgttmmiui" path="res://3d/Asset/data/fbx/Rock_1_K_Color1.fbx" id="1_0clwd"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3dfne"]
-height = 0.967285
+height = 1.0022
 
 [node name="Rock_1_K_Color1" instance=ExtResource("1_0clwd")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(3.19572, 0, 0, 0, 3.19572, 0, 0, 0, 3.19572, 0, 1.65013, 0)
+transform = Transform3D(3.19572, 0, 0, 0, 3.19572, 0, 0, 0, 3.19572, 0, 1.59435, 0)
 shape = SubResource("CylinderShape3D_3dfne")
