@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bqqgyqafm7xwp"]
+[gd_scene load_steps=62 format=3 uid="uid://bqqgyqafm7xwp"]
 
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://3d/objects/player.tscn" id="2_q3b0f"]
 [ext_resource type="Script" uid="uid://dgaynln3yalwr" path="res://3d/scripts/view.gd" id="3_6shgu"]
@@ -53,6 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://br8yfay2um16k" path="res://3d/Asset/data/fbx/Grass_2_C_Singlesided_Color1.fbx" id="51_y4xmr"]
 [ext_resource type="PackedScene" uid="uid://dcy1b4o4j5g8g" path="res://3d/Asset/data/fbx/Bush_2_F_Color1.fbx" id="52_1p4qa"]
 [ext_resource type="PackedScene" uid="uid://cxbqs2jxjquno" path="res://3d/Asset/data/fbx/Tree_4_C_Color1.fbx" id="53_y4xmr"]
+[ext_resource type="AudioStream" uid="uid://crheiajjhdiia" path="res://sounds/DigicoreFinal.wav" id="54_1p4qa"]
 
 [sub_resource type="Environment" id="Environment_eo2li"]
 background_mode = 1
@@ -536,3 +537,8 @@ transform = Transform3D(-0.617626, 0, -0.786472, 0, 1, 0, 0.786472, 0, -0.617626
 
 [node name="lantern4" parent="." instance=ExtResource("17_nhqua")]
 transform = Transform3D(-0.997119, 0, -0.075849, 0, 1, 0, 0.075849, 0, -0.997119, -8.08926, 15.4744, -77.4564)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("54_1p4qa")
+volume_db = -40.0
+autoplay = true
