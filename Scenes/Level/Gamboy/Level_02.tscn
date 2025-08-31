@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://fuvpwq5c16x4"]
+[gd_scene load_steps=24 format=3 uid="uid://fuvpwq5c16x4"]
 
 [ext_resource type="Texture2D" uid="uid://cqsirj6hg4qld" path="res://Scenes/Level/Gamboy/gbTilesets/gbTilesets/tsetBones.png" id="1_mw186"]
 [ext_resource type="Texture2D" uid="uid://8hudcdqftq5t" path="res://Scenes/Level/Gamboy/gbTilesets/gbTilesets/tsetLava.png" id="2_h26bg"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b38xvldhcrwyw" path="res://Scenes/actors/player.tscn" id="7_mw186"]
 [ext_resource type="AudioStream" uid="uid://crheiajjhdiia" path="res://sounds/DigicoreFinal.wav" id="8_h26bg"]
 [ext_resource type="PackedScene" uid="uid://cep8eifl3tebg" path="res://Scenes/Level/Pixel/assets/killzone.tscn" id="9_8xjue"]
+[ext_resource type="PackedScene" uid="uid://des811a11dohh" path="res://ScreenShader.tscn" id="10_2234x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pds07"]
 resource_name = "cc"
@@ -346,5 +347,9 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(2, 2)
 shape = SubResource("WorldBoundaryShape2D_2234x")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" parent="CanvasLayer" instance=ExtResource("10_2234x")]
 
 [connection signal="body_entered" from="Goal" to="Goal" method="_on_body_entered"]

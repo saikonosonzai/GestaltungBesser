@@ -7,6 +7,6 @@ var is_time_stop: bool = false
 
 # Freigeschaltete Fähigkeiten (kann z. B. beim Levelstart gesetzt werden)
 var unlocked_skills := {
-	"bullet_time": true,
+	"bullet_time": false,
 	"time_stop": true,
 }

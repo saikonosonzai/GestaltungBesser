@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b38xvldhcrwyw"]
+[gd_scene load_steps=43 format=3 uid="uid://b38xvldhcrwyw"]
 
 [ext_resource type="Texture2D" uid="uid://dpuba8f3aan3y" path="res://Sprites/knight.png" id="1_481le"]
 [ext_resource type="Script" uid="uid://c3y47at1eg0cm" path="res://Script/player.gd" id="1_rd77e"]
@@ -303,6 +303,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_6jgl5"]
 radius = 5.09902
 
+[sub_resource type="SystemFont" id="SystemFont_rd77e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bymgk"]
+font = SubResource("SystemFont_rd77e")
+
 [node name="Player" type="CharacterBody2D"]
 process_mode = 3
 z_index = 5
@@ -320,3 +325,12 @@ autoplay = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_6jgl5")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = -4.245
+offset_top = -32.65
+offset_right = 8.755
+offset_bottom = -9.65
+scale = Vector2(0.515, 0.515)
+label_settings = SubResource("LabelSettings_bymgk")

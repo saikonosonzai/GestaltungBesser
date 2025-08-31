@@ -5,6 +5,8 @@ const JUMP_VELOCITY = -300.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var color_rect: ColorRect = $"../CanvasLayer/ColorRect"
+@onready var label: Label = $Label
+
 
 @export var bullet_time_duration := 3.0
 @export var bullet_time_cooldown := 5.0
@@ -61,10 +63,25 @@ func activate_bullet_time():
 	Engine.time_scale = 1.0
 	GameState.is_bullet_time = false
 	print("Bullet Time vorbei")
-
-	await get_tree().create_timer(bullet_time_cooldown, true).timeout
+	
+	await showTimer()
+	
 	can_use_bullet_time = true
 	print("Bullet Time bereit")
+	
+
+
+func showTimer():
+	label.visible = true
+	var remaining := int(bullet_time_cooldown)
+	
+	while remaining > 0:
+		label.text = str(remaining) + "s"
+		await get_tree().create_timer(1.0, true).timeout
+		remaining -= 1
+	
+	label.text = ""
+	label.visible = false
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -76,4 +93,4 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 
 func _on_faehigkeit_body_entered(body: Node2D) -> void:
-	pass #hier collision mit fähigkeit in level 01
+	pass

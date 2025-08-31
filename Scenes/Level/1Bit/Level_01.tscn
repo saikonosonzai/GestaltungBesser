@@ -1620,7 +1620,7 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_oesu2")
 
 [node name="Player" parent="." instance=ExtResource("5_3jycm")]
-position = Vector2(251, -925)
+position = Vector2(271, -905)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -12)
@@ -1642,6 +1642,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="howToUse" type="Label" parent="."]
+visible = false
+offset_left = 1348.0
+offset_top = -1772.0
+offset_right = 1430.0
+offset_bottom = -1749.0
+text = "Press Shift"
 
 [connection signal="body_entered" from="faehigkeit" to="faehigkeit" method="_on_body_entered"]
 [connection signal="body_entered" from="Goal" to="Goal" method="_on_body_entered"]
